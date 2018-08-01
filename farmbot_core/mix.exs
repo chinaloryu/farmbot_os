@@ -19,7 +19,7 @@ defmodule FarmbotCore.MixProject do
     [
       app: :farmbot_core,
       description: "The Brains of the Farmbot Project",
-      elixir: "~> 1.6",
+      elixir: "~> 1.7",
       make_clean: ["clean"],
       make_env: make_env(),
       make_cwd: __DIR__,
