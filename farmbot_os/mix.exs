@@ -51,12 +51,15 @@ defmodule Farmbot.OS.MixProject do
       {:farmbot_core, path: "../farmbot_core", env: Mix.env()},
       {:farmbot_ext, path: "../farmbot_ext", env: Mix.env()},
       {:logger_backend_ecto, "~> 1.3"},
-      {:dialyxir, "~> 1.0.0-rc.2", runtime: false, override: true},
+      {:dialyxir, "~> 1.0.0-rc.3", runtime: false, override: true},
     ] ++ deps(@target)
   end
 
   # Specify target specific dependencies
-  defp deps("host"), do: []
+  defp deps("host"), do: [
+    {:excoveralls, "~> 0.9", only: [:test]},
+    {:ex_doc, "0.18.4", only: [:dev], runtime: false},
+  ]
 
   defp deps(target) do
     [
