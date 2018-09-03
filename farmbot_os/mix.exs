@@ -44,10 +44,10 @@ defmodule Farmbot.OS.MixProject do
       {:nerves, "~> 1.3", runtime: false},
       {:shoehorn, "~> 0.4"},
 
-      {:cowboy, "~> 1.0.0"},
-      {:plug, "~> 1.0"},
+      {:cowboy, "~> 2.4"},
+      {:plug, "~> 1.6"},
       {:cors_plug, "~> 1.5"},
-      {:phoenix_html, "~> 2.11"},
+      {:phoenix_html, "~> 2.12"},
 
       {:farmbot_core, path: "../farmbot_core", env: Mix.env()},
       {:farmbot_ext, path: "../farmbot_ext", env: Mix.env()},
@@ -66,13 +66,14 @@ defmodule Farmbot.OS.MixProject do
     [
       {:nerves_runtime, "~> 0.6"},
       {:nerves_network, "~> 0.3"},
+      {:nerves_wpa_supplicant, "~> 0.3"},
       {:nerves_firmware, "~> 0.4"},
       {:nerves_firmware_ssh, "~> 0.3"},
       {:nerves_time, "~> 0.2"},
       {:dhcp_server, "~> 0.6"},
       {:mdns, "~> 1.0"},
-      {:nerves_init_gadget, "~> 0.4", only: :dev},
-      {:elixir_ale, "~> 1.0"},
+      {:nerves_init_gadget, "~> 0.5", only: :dev},
+      {:elixir_ale, "~> 1.1"},
     ] ++ system(target)
   end
 
