@@ -28,13 +28,6 @@ end
 
 release :farmbot_os do
   set version: current_version(:farmbot_os)
-  set applications: [farmbot_ext: :load]
   plugin Shoehorn
-  if System.get_env("NERVES_SYSTEM") do
-    set dev_mode: false
-    set include_src: false
-    set include_erts: System.get_env("ERL_LIB_DIR")
-    set include_system_libs: System.get_env("ERL_SYSTEM_LIB_DIR")
-    set vm_args: "rel/vm.args"
-  end
+  plugin Nerves
 end
