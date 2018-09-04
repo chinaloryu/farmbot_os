@@ -11,6 +11,7 @@ defmodule Farmbot.AMQP.ChannelSupervisor do
     conn = Farmbot.AMQP.ConnectionWorker.connection()
     jwt = Farmbot.Jwt.decode!(token)
     children = [
+      {Farmbot.AMQP.ConsoleTransport,      [conn, jwt]},
       {Farmbot.AMQP.LogTransport,          [conn, jwt]},
       {Farmbot.AMQP.BotStateTransport,     [conn, jwt]},
       {Farmbot.AMQP.AutoSyncTransport,     [conn, jwt]},
