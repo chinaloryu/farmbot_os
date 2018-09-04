@@ -41,17 +41,22 @@ defmodule Farmbot.OS.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
+      # Nerves stuff.
       {:nerves, "~> 1.3", runtime: false},
       {:shoehorn, "~> 0.4"},
 
+      # Configurator.
       {:cowboy, "~> 2.4"},
       {:plug, "~> 1.6"},
       {:cors_plug, "~> 1.5"},
       {:phoenix_html, "~> 2.12"},
 
+      # Log storage.
+      {:ecto, "~> 2.2.9"},
+      {:logger_backend_ecto, "~> 1.3"},
+
       {:farmbot_core, path: "../farmbot_core", env: Mix.env()},
       {:farmbot_ext, path: "../farmbot_ext", env: Mix.env()},
-      {:logger_backend_ecto, "~> 1.3"},
     ] ++ deps(@target)
   end
 
