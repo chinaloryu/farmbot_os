@@ -1,6 +1,6 @@
 defmodule Farmbot.Target.DiskUsageWorker do
   use GenServer
-  @data_path Application.get_env(:farmbot, :data_path)
+  @data_path Application.get_env(:farmbot_ext, :data_path)
   @data_path || Mix.raise("No data path.")
 
   def start_link(_, opts) do
